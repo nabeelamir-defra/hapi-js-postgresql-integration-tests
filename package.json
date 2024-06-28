@@ -6,9 +6,9 @@
   "scripts": {
     "start": "node --experimental-vm-modules index.js",
     "test": "jest --detectOpenHandles",
-    "liquibase:migrate":"node db/migrations.js migrate",
-    "liquibase:status":"node db/migrations.js status",
-    "liquibase:drop":"node db/migrations.js drop"
+    "liquibase:migrate":"node db/migration.js migrate",
+    "liquibase:status":"node db/migration.js status",
+    "liquibase:drop":"node db/migration.js drop"
   },
   "author": "",
   "license": "ISC",
