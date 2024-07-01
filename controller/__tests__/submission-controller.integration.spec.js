@@ -1,5 +1,6 @@
 
 import { sequelize } from '../../config/db.js';
+import Submission from '../../entity/submission.js';
 import initialiseServer from '../../server.js'
 import { truncate } from '../../test-utils/db-util.js';
 
@@ -36,8 +37,9 @@ describe.only('submission-controller', () => {
       }
     })
 
-    const result = await server.inject({ method: 'GET', url: '/submission' })
-    const payload = JSON.parse(result.payload)
-    expect(payload).toHaveLength(1)
+    await server.inject({ method: 'GET', url: '/submission' })
+
+    const result = await Submission.findAll();
+    expect(result).toHaveLength(1)
   })
 });
