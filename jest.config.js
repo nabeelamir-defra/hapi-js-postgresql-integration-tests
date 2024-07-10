@@ -3,6 +3,7 @@ const config = {
   "transform": {
     "^.+\\.(js|ts)$": "babel-jest"
   },
-  "transformIgnorePatterns": []
+  "transformIgnorePatterns": [],
+  "globalSetup": "./jest-setup.js"
 };
 export default config
